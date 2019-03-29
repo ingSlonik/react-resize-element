@@ -12,9 +12,16 @@ type ResizeElementProps = {
 
 export default class ResizeElement extends Component<ResizeElementProps, {}> {
 
-    _node: null | HTMLElement = null;
+    constructor() {
+        super();
 
-    resizeHandler = (element: HTMLElement, size: Size) => {
+        _node = null;
+        this.resizeHandler = this.resizeHandler.bind(this);
+    }
+
+    _node: null | HTMLElement;
+
+    resizeHandler(element: HTMLElement, size: Size) {
         const { onResize } = this.props;
         onResize(size);
     }
