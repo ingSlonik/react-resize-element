@@ -15,7 +15,7 @@ export default class ResizeElement extends Component<ResizeElementProps, {}> {
     constructor() {
         super();
 
-        _node = null;
+        this._node = null;
         this.resizeHandler = this.resizeHandler.bind(this);
     }
 
