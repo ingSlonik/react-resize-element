@@ -1,6 +1,6 @@
 # React Resize Element
 
-Low performance resize event listener as React element based on [https://www.npmjs.com/package/react-element-resize](Element Resize Event Listener).
+Low performance resize event listener as React element based on [Element Resize Event Listener](https://www.npmjs.com/package/react-element-resize).
 
 ## API
 
