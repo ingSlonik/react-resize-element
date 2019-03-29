@@ -1,0 +1,37 @@
+{
+    "name": "react-resize-element",
+    "version": "0.1.0",
+    "description": "Low performance react resize element.",
+    "main": "lib/index.js",
+    "scripts": {
+        "build": "babel src --out-dir lib",
+        "prepublish": "npm run build"
+    },
+    "keywords": [
+        "resize",
+        "element",
+        "react",
+        "easy&lite",
+        "low performance"
+    ],
+    "author": "Filip Paulů <ing.fenix@seznam.cz>",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ingSlonik/react-resize-element.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ingSlonik/react-resize-element/issues"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/cli": "^7.2.3",
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.2.3",
+        "@babel/preset-flow": "^7.0.0",
+        "@babel/preset-react": "^7.0.0"
+    },
+    "dependencies": {
+        "element-resize-event-listener": "^0.1.1",
+        "react": "x.x.x"
+    }
+}
