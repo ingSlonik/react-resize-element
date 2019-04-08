@@ -1,6 +1,6 @@
 {
     "name": "react-resize-element",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "description": "Low performance react resize element.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
