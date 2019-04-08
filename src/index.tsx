@@ -1,19 +1,19 @@
-// @flow
-import React, { Component, type Node } from "react";
+import * as React from "react";
+import { Component, ReactNode } from "react";
 
 import { addResizeEventListener, removeAllResizeEventListeners } from "element-resize-event-listener";
 
 type Size = { width: number, height: number };
 
 type ResizeElementProps = {
-    children: Node,
+    children: ReactNode,
     onResize: (size: Size) => void,
 };
 
 export default class ResizeElement extends Component<ResizeElementProps, {}> {
 
-    constructor() {
-        super();
+    constructor(props: ResizeElementProps) {
+        super(props);
 
         this._node = null;
         this.resizeHandler = this.resizeHandler.bind(this);

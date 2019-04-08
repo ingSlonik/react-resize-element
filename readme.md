@@ -2,6 +2,8 @@
 
 Low performance resize event listener as React element based on [Element Resize Event Listener](https://www.npmjs.com/package/react-element-resize).
 
+Include types for TypeScript.
+
 ## API
 
 ```js
