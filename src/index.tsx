@@ -6,11 +6,12 @@ type Size = { width: number, height: number };
 
 type ResizeElementProps = {
     children: Node,
+    sendActualSize?: boolean,
     style: React.CSSProperties,
     onResize: (size: Size) => void,
 };
 
-export default function ResizeElement({ children, onResize, style }: ResizeElementProps) {
+export default function ResizeElement({ children, onResize, style, sendActualSize }: ResizeElementProps) {
     const node = useRef<null | HTMLDivElement>(null);
 
     useEffect(() => {
@@ -18,7 +19,7 @@ export default function ResizeElement({ children, onResize, style }: ResizeEleme
             onResize(size);
         }
         if (node.current) {
-            addResizeEventListener(node.current, resizeHandler);
+            addResizeEventListener(node.current, resizeHandler, sendActualSize);
         }
         return () => {
             if (node.current) {

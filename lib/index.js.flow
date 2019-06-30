@@ -9,4 +9,4 @@ type ResizeElementProps = {
     style: $Shape<CSSStyleDeclaration>,
     onResize: (size: Size) => void,
 };
-export default function ResizeElement({ children, onResize, style }: ResizeElementProps): Node;
+declare export default function ResizeElement(props: ResizeElementProps): Node;
