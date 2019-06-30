@@ -1,0 +1,12 @@
+// @flow
+import React, { type Node } from "react";
+type Size = {
+    width: number,
+    height: number,
+};
+type ResizeElementProps = {
+    children: Node,
+    style: $Shape<CSSStyleDeclaration>,
+    onResize: (size: Size) => void,
+};
+export default function ResizeElement({ children, onResize, style }: ResizeElementProps): Node;

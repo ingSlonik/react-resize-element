@@ -1,6 +1,6 @@
 {
     "name": "react-resize-element",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Low performance react resize element.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -14,7 +14,8 @@
         "react",
         "easy&lite",
         "low performance",
-        "TypeScript"
+        "TypeScript",
+        "FlowType"
     ],
     "author": "Filip Paulů <ing.fenix@seznam.cz>",
     "repository": {

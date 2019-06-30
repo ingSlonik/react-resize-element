@@ -1,42 +1,33 @@
 import * as React from "react";
-import { Component, ReactNode } from "react";
-
+import { useRef, useEffect } from "react";
 import { addResizeEventListener, removeAllResizeEventListeners } from "element-resize-event-listener";
 
 type Size = { width: number, height: number };
 
 type ResizeElementProps = {
-    children: ReactNode,
+    children: Node,
+    style: React.CSSProperties,
     onResize: (size: Size) => void,
 };
 
-export default class ResizeElement extends Component<ResizeElementProps, {}> {
+export default function ResizeElement({ children, onResize, style }: ResizeElementProps) {
+    const node = useRef<null | HTMLDivElement>(null);
 
-    constructor(props: ResizeElementProps) {
-        super(props);
-
-        this._node = null;
-        this.resizeHandler = this.resizeHandler.bind(this);
-    }
-
-    _node: null | HTMLElement;
-
-    resizeHandler(element: HTMLElement, size: Size) {
-        const { onResize } = this.props;
-        onResize(size);
-    }
-
-    componentWillUnmount() {
-        if (this._node) {
-            removeAllResizeEventListeners(this._node);
+    useEffect(() => {
+        function resizeHandler(element: HTMLDivElement, size: Size) {
+            onResize(size);
         }
-    }
+        if (node.current) {
+            addResizeEventListener(node.current, resizeHandler);
+        }
+        return () => {
+            if (node.current) {
+                removeAllResizeEventListeners(node.current);
+            }
+        };
+    }, [ node ]);
 
-    render() {
-        const { children } = this.props;
-
-        return <div ref={node => node && addResizeEventListener(node, this.resizeHandler)}>
-            {children}
-        </div>;
-    }
+    return <div ref={node} style={style}>
+        {children}
+    </div>;
 }
