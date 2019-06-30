@@ -1,6 +1,6 @@
 {
     "name": "react-resize-element",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "description": "Low performance react resize element.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -31,7 +31,7 @@
         "typescript": "^3.4.2"
     },
     "dependencies": {
-        "element-resize-event-listener": "^0.2.1",
+        "element-resize-event-listener": "^0.2.2",
         "react": "x.x.x"
     }
 }
