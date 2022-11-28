@@ -5,8 +5,10 @@ type Size = {
     height: number,
 };
 type ResizeElementProps = {
-    children: Node,
+    tag?: string,
     style: $Shape<CSSStyleDeclaration>,
+    notSendInitialSize?: boolean,
     onResize: (size: Size) => void,
+    children: Node,
 };
 declare export default function ResizeElement(props: ResizeElementProps): Node;
