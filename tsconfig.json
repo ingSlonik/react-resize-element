@@ -5,7 +5,8 @@
         "declaration": true,
         "sourceMap": true,
         "noImplicitAny": true,
-        "target": "es6",
+        "strictNullChecks": true,
+        "target": "es5",
         "jsx": "react"
     },
     "include": [
